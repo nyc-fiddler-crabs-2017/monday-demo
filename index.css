@@ -1,3 +1,11 @@
 input {
   width: 250px;
 }
+
+.even {
+  background-color: green;
+}
+
+.odd {
+  background-color: red;
+}
