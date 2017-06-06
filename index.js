@@ -2,19 +2,15 @@ class ClickCounter {
   constructor(domHook, opts) {
     this.elem = document.getElementById(domHook)
 
-    this.props = Object.assign({
-      increment: 1
-    }, opts)
+    this.props = {}
 
-    this.state = {
-    }
+    this.state = {}
 
     this.elem.addEventListener("click", (e) => {
       this.incrementClickCount();
     })
   }
 
-  // TODO :(
   incrementClickCount() {
     this.props.parent.clickHandler()
   }
@@ -27,15 +23,12 @@ class ClickCounter {
     this.elem.innerHTML = body;
   }
 }
-
 class OddEven {
   constructor(domHook) {
     this.elem = document.getElementById(domHook);
 
     this.props = {}
-
-    this.state = {
-    }
+    this.state = {}
   }
 
   oddEvenText() {
@@ -50,7 +43,6 @@ class OddEven {
     return body;
   }
 }
-
 class ParentWidget {
   constructor() {
     this.props = {
@@ -78,7 +70,6 @@ class ParentWidget {
     this.props.children.forEach(c => c.render())
   }
 }
-
 
 let cc = new ClickCounter("click-counter-hook");
 let oe = new OddEven("odd-even-hook");
